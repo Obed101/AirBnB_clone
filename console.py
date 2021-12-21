@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This Module uses the cmd module to create commands"""
 import cmd
+import sys
 from models import storage
 from models.user import User
 from models.city import City
@@ -23,16 +24,8 @@ class HBNBCommand(cmd.Cmd):
         "Amenity": Amenity,
         "BaseModel": BaseModel,
     }
-
-    def __init__(self):
-        """Object initializer.
-        Returns:
-            None
-        """
-        cmd.Cmd.__init__(self)
-        self.prompt = "(hbnb) "
-        self.bm_object = None
-        return None
+    # Setting the prompt for interactive/ non-interactive use
+    prompt = '(hbnb) ' if sys.stdin.isatty() else ''
 
     def do_create(self, line):
         """Create a new instance"""
