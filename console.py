@@ -38,16 +38,16 @@ class HBNBCommand(cmd.Cmd):
         self.bm_object = None
         return None
 
-    def do_create(self, line):
-        if not line:
-            print("** class name missing **")
-        elif line not in HBNBCommand.classes_dict.keys():
-            print("** class doesn't exist **")
-        else:
-            self.bm_object = HBNBCommand.classes_dict[line]()
-            storage.save()
-            print(self.bm_object.id)
-        return None
+#     def do_create(self, line):
+#         if not line:
+#             print("** class name missing **")
+#         elif line not in HBNBCommand.classes_dict.keys():
+#             print("** class doesn't exist **")
+#         else:
+#             self.bm_object = HBNBCommand.classes_dict[line]()
+#             storage.save()
+#             print(self.bm_object.id)
+#         return None
 
     def do_show(self, line):
         """Show BaseModel type instance of given id.
