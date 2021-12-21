@@ -39,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
         return None
 
     def do_create(self, line):
-        """Creates a new BaseModel instance."""
+        """creates a new instance of the class name"""
         if not line:
             print("** class name missing **")
         elif line not in HBNBCommand.classes_dict.keys():
